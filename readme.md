@@ -4,7 +4,7 @@
 
 ### note 
 * kautil_regex_extern_initialize / kautil_wregex_extern_initialize : use when want to make detailed settings for dl options
-* kautil_regex_extern_auto / kautil_wregex_extern_auto             : this is handire than kautil_json_nlohmann_extern_initialize, and perhaps compilation time is short, but dl options are fixed.
+* kautil_regex_extern_auto / kautil_wregex_extern_auto             : this is handire than kautil_(w)regex_extern_initialize, and perhaps compilation time is short, but dl options are fixed.
 
 ### example
 ```c++

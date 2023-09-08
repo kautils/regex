@@ -74,7 +74,7 @@ int tmain_regex_extern(
                     __printf("%.*ls\n",len,res);
                 }
             }
-            m->smatch_finalize(hsmat);
+            m->smatch_free(hsmat);
         }
         
         m->free(hreg);

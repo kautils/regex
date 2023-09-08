@@ -28,12 +28,12 @@ struct kautil_regex_extern{
     const char * (*replace)(void * hdl,const char * input,const char * replacement)=0;
     bool (*itr_next)(void * itr)=0;
     uint64_t (*itr_str)(void * itr,char ** res)=0;
-    void (*itr_finalize)(void * hdl)=0;
+    void (*itr_free)(void * hdl)=0;
     void * (*initialize)()=0;
     void (*free)(void *hdl)=0;
 
     kautil_smatch* (*smatch_initialize)(void *hdl)=0;
-    void (*smatch_finalize)(kautil_smatch *hdl)=0;
+    void (*smatch_free)(kautil_smatch *hdl)=0;
     uint64_t (*smatch_current_length)(kautil_smatch *hdl)=0;
     uint64_t (*smatch_current_item)(kautil_smatch* hdl,char ** item,int const& i)=0;
     char * (*smatch_search)(kautil_smatch* hdl,const char * b,const char * e)=0;
@@ -52,13 +52,13 @@ struct kautil_wregex_extern{
     const wchar_t * (*replace)(void * hdl,const wchar_t * input,const wchar_t * replacement)=0;
     bool (*itr_next)(void * itr)=0;
     uint64_t (*itr_str)(void * itr,wchar_t ** res)=0;
-    void (*itr_finalize)(void * hdl)=0;
+    void (*itr_free)(void * hdl)=0;
     void (*free)(void *hdl)=0;
     void * (*initialize)()=0;
 
     uint64_t (*smatch_current_length)(kautil_wsmatch *hdl)=0;
     kautil_wsmatch * (*smatch_initialize)(void *hdl)=0;
-    void (*smatch_finalize)(kautil_wsmatch *hdl)=0;
+    void (*smatch_free)(kautil_wsmatch *hdl)=0;
     uint64_t (*smatch_currentlength)(kautil_wsmatch *hdl)=0;
     uint64_t (*smatch_current_item)(kautil_wsmatch* hdl,wchar_t ** item,int const& i)=0;
     wchar_t * (*smatch_search)(kautil_wsmatch* hdl,const wchar_t * b,const wchar_t * e)=0;

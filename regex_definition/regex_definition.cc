@@ -151,13 +151,13 @@ extern "C" kautil_extern_type * extern_initialize(){
     m->exists = kautil_regex_(exists);
     m->replace = kautil_regex_(replace);
     m->itr_initialize = kautil_regex_(itr_initialize);
-    m->itr_finalize = kautil_regex_(itr_finalize);
+    m->itr_free = kautil_regex_(itr_finalize);
     m->itr_next = kautil_regex_(itr_next);
     m->itr_set = kautil_regex_(itr_set);
     m->itr_length_found = kautil_regex_(itr_length_found);
     m->itr_str = kautil_regex_(itr_str);
     m->smatch_initialize = kautil_regex_(smatch_initialize);
-    m->smatch_finalize = kautil_regex_(smatch_finalize);
+    m->smatch_free = kautil_regex_(smatch_finalize);
     m->smatch_current_length = kautil_regex_(smatch_current_length);
     m->smatch_current_item = kautil_regex_(smatch_current_item);
     m->smatch_search = kautil_regex_(smatch_search);
