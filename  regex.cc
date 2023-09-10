@@ -69,7 +69,7 @@ void kautil_regex_extern_free(kautil_regex_extern * m){
 
 
 
-#include "sharedlib/sharedlib.h"
+#include "kautil/sharedlib/sharedlib.h"
 
 struct auto_delete_w{
     kautil_wregex_extern * m=0;

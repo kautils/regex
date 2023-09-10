@@ -16,8 +16,11 @@ git_clone(https://raw.githubusercontent.com/kautils/CMakeLibrarytemplate/v0.0.1/
 git_clone(https://raw.githubusercontent.com/kautils/CMakeFetchKautilModule/v0.0.1/CMakeFetchKautilModule.cmake)
 
 
-CMakeFetchKautilModule(sharedlib GIT https://github.com/kautils/sharedlib.git REMOTE origin TAG v0.0.1)
+#CMakeFetchKautilModule(sharedlib GIT https://github.com/kautils/sharedlib.git REMOTE origin TAG v0.0.1 FORCE_UPDATE)
+CMakeFetchKautilModule(sharedlib GIT D:/git.local/origin/kautil_sharedlib REMOTE origin BRANCH v0)
 find_package(KautilSharedlib.0.0.1.static REQUIRED)
+
+
 
 
 include(regex_definition/regex_definition.cmake)
