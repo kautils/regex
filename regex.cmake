@@ -28,14 +28,13 @@ install(TARGETS ${__definition_target} EXPORT ${__definition_target} DESTINATION
 
 
 set(module_name regex)
-get_filename_component(__include_dir "${CMAKE_CURRENT_LIST_DIR}" DIRECTORY)
 unset(srcs)
 file(GLOB srcs ${CMAKE_CURRENT_LIST_DIR}/*.cc)
 set(${module_name}_common_pref
     #DEBUG_VERBOSE
     MODULE_PREFIX kautil wstd
     MODULE_NAME ${module_name}
-    INCLUDES $<BUILD_INTERFACE:${__include_dir}> $<INSTALL_INTERFACE:include>
+    INCLUDES ${CMAKE_CURRENT_LIST_DIR} $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}> $<INSTALL_INTERFACE:include>
     SOURCES ${srcs}
     LINK_LIBS kautil::sharedlib::0.0.1::static 
     EXPORT_NAME_PREFIX ${PROJECT_NAME}
